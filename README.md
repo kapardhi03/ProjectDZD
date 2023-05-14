@@ -18,8 +18,9 @@ Then start the backend server using the command "uvicorn mlapi:app --reload" .
 After starting the backend and frontend servers successfully. use the given sample CSV files to upload to the website to obtain results.
 
 **NOTE:** make sure you update the port number of your backend server in the ./zeroday/src/App.js if it is other than localhost:8000. _(generally, backend servers run on localhost:8000)_
-Steps to be followed :
- Firstly, install all the required prerequisites mentioned above
+
+**Steps to be followed :**
+Firstly, install all the required prerequisites mentioned above
     In the front end folder, run the npm start command
     In the backend folder, run the command: "uvicorn mlapiLSTM:app --port 8000"
     The backend will be running in the 8000 port.
@@ -27,4 +28,5 @@ Steps to be followed :
     Or just use the csv files provided in the "sample csvs" file.
     Click on the "choose file" botton, select the csv and click on the "Upload button"
     You will get the results along with a Chatgpt response containing details of the type of attack.
+    
  **_contact:_**_kapardhikannekanti@gmail.com_
