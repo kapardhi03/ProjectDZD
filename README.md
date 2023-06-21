@@ -22,11 +22,11 @@ After starting the backend and frontend servers successfully. use the given samp
 **Steps to be followed :**
 Firstly, install all the required prerequisites mentioned above
     In the front end folder, run the npm start command
-    In the backend folder, run the command: "uvicorn mlapiLSTM:app --port 8000"
+    In the backend folder, run the command: "uvicorn mlapi:app --port 8000"
     The backend will be running in the 8000 port.
     Now, you have to get your network logs using CICFlowmeter.
     Or just use the csv files provided in the "sample csvs" file.
     Click on the "choose file" botton, select the csv and click on the "Upload button"
-    You will get the results along with a Chatgpt response containing details of the type of attack.
+    You will get the results along with details of the type of attack.
     
  **_contact:_**_kapardhikannekanti@gmail.com_
