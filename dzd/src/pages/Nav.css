@@ -1,0 +1,26 @@
+/* Custom styles to reduce the size of the navbar */
+.navbar {
+    padding: 0.10px; /* Reduce the padding */
+  }
+  
+  .navbar-brand {
+    font-size: 2rem; /* Reduce the font size */
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.25rem 0.5rem; /* Reduce the padding */
+    font-size: 0.9rem; /* Reduce the font size */
+  }
+  
+  .dropdown-menu {
+    font-size: 0.9rem; /* Reduce the font size */
+  }
+  .navbar-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+}
+
+  
+  /* #part1{
+    padding-top: 30px;
+} */

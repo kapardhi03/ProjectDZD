@@ -43,7 +43,7 @@ async def upload_file(file: UploadFile = File(...)):
     count_0, count_1 = prediction.count(0), prediction.count(1)
 
     if count_0 > count_1:
-        result = "Not Malicious"
+        result = "Not MalicioA"
         return {"Prediction": result, "nonmal" : count_0, "mali" : count_1, "attack": "NA"}
     else:
         type_of_the_attack = ""
@@ -58,35 +58,35 @@ async def upload_file(file: UploadFile = File(...)):
         if type_of_the_attack=="":
             type_of_the_attack="Zero-day"
 
-        response = getchatgpt(type_of_the_attack)
+        # response = getchatgpt(type_of_the_attack)
         print(type_of_the_attack)
-        return {"Prediction": "Malicious", "nonmal" : count_0, "mali" : count_1, "attack": type_of_the_attack, "info": response}
+        return {"Prediction": "Malicious", "nonmal" : count_0, "mali" : count_1, "attack": type_of_the_attack}
 
 
 
 
-def getchatgpt(attack):
-    openai.api_key = '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'
+# def getchatgpt(attack):
+    # openai.api_key = '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'
 
     # Define your chat function
-    def chat_with_gpt(prompt):
-        response = openai.Completion.create(
-            engine='text-davinci-003',  # Specify the GPT-3.5 engine
-            prompt=prompt,
-            max_tokens=500,  # Adjust the response length as needed
-            n=1,  # Number of responses to generate
-            stop=None,  # Optional stopping criteria
-            temperature=0.7,  # Controls the randomness of the output
-            timeout=10,  # Maximum time (in seconds) to wait for a response
-        )
+    # def chat_with_gpt(prompt):
+        # response = openai.Completion.create(
+            # engine='text-davinci-003',  # Specify the GPT-3.5 engine
+            # prompt=prompt,
+            # max_tokens=500,  # Adjust the response length as needed
+            # n=1,  # Number of responses to generate
+            # stop=None,  # Optional stopping criteria
+            # temperature=0.7,  # Controls the randomness of the output
+            # timeout=10,  # Maximum time (in seconds) to wait for a response
+        # )
 
-        if 'choices' in response and len(response['choices']) > 0:
-            return response['choices'][0]['text'].strip()
-        else:
-            return None
+        # if 'choices' in response and len(response['choices']) > 0:
+            # return response['choices'][0]['text'].strip()
+        # else:
+            # return None
 
     # Example usage
-    prompt = f"Give information of the attack {attack} and suggestions"
-    response = chat_with_gpt(prompt)
-    return response
+    # prompt = f"Give information of the attack {attack} and suggestions"
+    # response = chat_with_gpt(prompt)
+    # return response
     
