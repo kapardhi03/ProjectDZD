@@ -1,10 +1,6 @@
 {
   "dependencies": {
-<<<<<<< HEAD
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0"
-=======
-    "axios": "^1.4.0"
->>>>>>> 29b4dd63a314a90a91a8cb84542fd0e7307dc748
   }
 }

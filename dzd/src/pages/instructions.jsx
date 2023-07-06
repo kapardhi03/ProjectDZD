@@ -49,7 +49,7 @@ function Instructions() {
         </a>
       </div>
       <div className="help-section">
-        <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="help-button">
+        <a href="/knowmore" >
           Need Help?
         </a>
       </div>

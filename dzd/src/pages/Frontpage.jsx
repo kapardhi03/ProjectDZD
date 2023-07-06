@@ -48,7 +48,7 @@ const Navbar = () => {
       faqRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
 
   const handleFeedbackClick = () => {
     if (feedbackRef.current) {
@@ -118,7 +118,7 @@ const Navbar = () => {
         <img className='FirstIMG' src='https://i.pinimg.com/564x/f1/f5/98/f1f59847fedb175f01f45dd7f3c16ccc.jpg' alt='Image' />
       </section>
 
-      <section id='part2' style={{ padding: '0px 3% 0px 0%', borderRadius: '7%'  , width:'100%'}}>
+      <section id='part2' style={{ padding: '0px 3% 0px 0%', borderRadius: '7%', width: '100%' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0.2%' }}>
           <div style={{ marginRight: '2%' }}>
             <img src='https://www.malwarebytes.com/blog/images/uploads/2020/06/zero-day-image.jpg' alt='Image' style={{ width: '500px', height: '400px', borderRadius: '10%', objectFit: 'cover' }} />
@@ -130,7 +130,7 @@ const Navbar = () => {
       </section>
 
       <section id='part3'>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="https://www.indusface.com/wp-content/uploads/2019/08/3-Ways-to-Prevent-Application-Zero-Day-Attacks.png" class="d-block w-100" alt="images" />
@@ -152,6 +152,7 @@ const Navbar = () => {
           </button>
         </div>
       </section>
+
 
       {/* FAQ */}
       <div className="container-small">
@@ -290,9 +291,9 @@ const Navbar = () => {
 
       <div className="bottom-container">
         <div className="Link">
-          <a className="footer-link" target='_blank' href="https://www.linkedin.com/">@LinkedIn</a>
+          <a className="footer-link" target='_blank' href="https://www.linkedin.com/in/kapardhi-kannekanti-a91a4325b">@LinkedIn</a>
           <span className="link-space"></span>
-          <a className="footer-link" target='_blank' href="https://twitter.com/">@Twitter</a>
+          <a className="footer-link" target='_blank' href="https://twitter.com/kapardhi200903">@Twitter</a>
           <span className="link-space"></span>
           <a className="footer-link" target='_blank' href="https://www.instagram.com/kapardhi.kannekanti/">@Instagram</a>
         </div>

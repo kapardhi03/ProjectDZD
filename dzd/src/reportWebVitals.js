@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { loadModel } from './modelLoader';
 
 export async function detectZeroDayAttack(file) {
@@ -48,18 +47,3 @@ export async function detectZeroDayAttack(file) {
   // If the file is benign, return null
   return null;
 };
-=======
-const reportWebVitals = onPerfEntry => {
-  if (onPerfEntry && onPerfEntry instanceof Function) {
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(onPerfEntry);
-      getFID(onPerfEntry);
-      getFCP(onPerfEntry);
-      getLCP(onPerfEntry);
-      getTTFB(onPerfEntry);
-    });
-  }
-};
-
-export default reportWebVitals;
->>>>>>> 29b4dd63a314a90a91a8cb84542fd0e7307dc748
