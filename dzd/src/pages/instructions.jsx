@@ -1,9 +1,20 @@
 import React from 'react';
 import './Instructions.css';
-
+import Navbar from './Navbar';
 function Instructions() {
+  const downloadfile = () => {
+    const downloadFile = (fileUrl, fileName) => {
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.download = fileName;
+      link.click();
+    };
+
+    downloadFile(process.env.PUBLIC_URL + '/collectlogs.zip', 'collectlogs.zip');
+ };
   return (
     <div className="instructions">
+      <Navbar/>
       <h1>Instructions</h1>
       <section>
         <h2>Installation</h2>
@@ -43,16 +54,16 @@ function Instructions() {
         <h3>Sniff packets real-time from interface to flow csv: (need root permission)</h3>
         <pre className="code">cicflowmeter -i eth0 -c flows.csv</pre>
       </section>
+      <a style={{paddingLeft:"50%"}}> or </a>
       <div className='upload-section'>
-        <a href='/upload' className='upload-button'>
-          Upload Now
+        <a href='#' onClick={downloadfile} className='upload-button'>
+          Download Now
         </a>
       </div>
-      <div className="help-section">
-        <a href="/knowmore" >
-          Need Help?
-        </a>
-      </div>
+      
+
+
+
     </div>
   );
 }

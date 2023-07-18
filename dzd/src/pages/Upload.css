@@ -217,7 +217,7 @@
   font-size: 14px;
   font-weight: bold;
   color: #fff;
-  /* background-color: #ffffff; */
+  background-color: #ffffff;
   border: none;
   border-radius: 5px;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
@@ -226,9 +226,10 @@
   font-style: oblique;
   color: #3f3c3c;
   margin-left: 2px;
-  margin-right: 9%;
+  margin-right: 7%;
   /* margin-top: auto; */
   margin-bottom: 15%;
+  padding-left: 20;
 }
 
 .knowmore:hover {

@@ -1,9 +1,23 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css'; // Import Bootstrap CSS
 import 'bootstrap/dist/js/bootstrap.bundle'; // Import Bootstrap JavaScript
 import "./Nav.css";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import './AboutUs';
+import Instructions from './instructions';
+import Upload from './Upload';
+import Uploadpage from './Uploadpage';
+// import register from './register';
 // import instructions from './instructions';
 const Navbar = () => {
+  const [username, setUsername] = useState("");
+  const history = useHistory();
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [activeQuestion, setActiveQuestion] = useState(null);
 
@@ -55,6 +69,27 @@ const Navbar = () => {
       feedbackRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const handleLogout = () => {
+    // Clear login details from local storage
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+
+    // Update authentication status
+    setIsAuthenticated(false);
+
+    // Redirect to the home page
+    history.push("/");
+  };
+
+  useEffect(() => {
+    // Check if the user is already logged in
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn === "true") {
+      const storedUsername = localStorage.getItem("username");
+      setUsername(storedUsername);
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,32 +114,119 @@ const Navbar = () => {
   return (
     <div className='Body'>
       <section id='nav'>
-        <nav className={`navbar navbar-expand-lg navbar-dark bg-dark fixed-top ${navbarVisible ? '' : 'navbar-hidden'}`}>
-          <div className="container-fluid">
-            <a className="navbar-brand" href="#">DZD</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
+        <nav
+          className={`navbar navbar-expand-lg navbar-dark bg-dark fixed-top ${navbarVisible ? '' : 'navbar-hidden'
+            }`}
+        >
+          <div className='container-fluid'>
+            <a className='navbar-brand' href='#'>
+              DZD
+            </a>
+            <button
+              className='navbar-toggler'
+              type='button'
+              data-bs-toggle='collapse'
+              data-bs-target='#navbarContent'
+              aria-controls='navbarContent'
+              aria-expanded='false'
+              aria-label='Toggle navigation'
+            >
+              <span className='navbar-toggler-icon'></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarContent">
-              <ul className="navbar-nav ms-auto me-3">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">Home</a>
+            <div className='collapse navbar-collapse' id='navbarContent'>
+              <ul className='navbar-nav ms-auto me-3'>
+                <li className='nav-item'>
+                  <a className='nav-link active' aria-current='page' href='/'>
+                    Home
+                  </a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">Sign Up</a>
+                <li className='nav-item'>
+                  {isAuthenticated ? (
+                    <span className='nav-link'>{username}</span>
+                  ) : (
+                    <Link to='/login' className='nav-link'>
+                      Log-In
+                    </Link>
+                  )}
                 </li>
-                <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li className='nav-item dropdown'>
+                  <a
+                    className='nav-link dropdown-toggle'
+                    href='#'
+                    role='button'
+                    data-bs-toggle='dropdown'
+                    aria-expanded='false'
+                  >
                     More
                   </a>
-                  <ul className="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                    <li><a className="dropdown-item" href="/Upload">Action</a></li>
-                    <li><hr className="dropdown-divider" /></li>
-                    <li><a className="dropdown-item" href="#" onClick={handleWhatsAppShare}>Share via WhatsApp</a></li>
-                    <li><a className="dropdown-item" href="#" onClick={handleCopyLink}>Copy Link</a></li>
-                    <li><hr className="dropdown-divider" /></li>
-                    <a className="dropdown-item small-link" href="#feedback" onClick={handleFeedbackClick}>Feedback</a>
-                    <a className="dropdown-item small-link" href="#faq" onClick={handleFaqClick}>FAQ</a>
+                  <ul className='dropdown-menu dropdown-menu-dark dropdown-menu-end'>
+                    {isAuthenticated ? (
+                      <>
+                        <li>
+                          <a href="/Upload" className='dropdown-item'>
+                            Action
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            className='dropdown-item'
+                            href='#'
+                            onClick={handleLogout}
+                          >
+                            Logout
+                          </a>
+                        </li>
+                      </>
+                    ) : (
+                      <li>
+                        <Link to='/register' className='dropdown-item'>
+                          Sign Up
+                        </Link>
+                      </li>
+                    )}
+                    <li>
+                      <hr className='dropdown-divider' />
+                    </li>
+                    {/* <li>
+                      <a
+                        className='dropdown-item small-link'
+                        href='#feedback'
+                        onClick={handleFeedbackClick}
+                      >
+                        Feedback
+                      </a>
+                    </li> */}
+
+
+
+
+                    <li>
+                      <a
+                        className='dropdown-item small-link'
+                        href='#faq'
+                        onClick={handleFaqClick}
+                      >
+                        FAQ
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className='dropdown-item'
+                        href='#'
+                        onClick={handleWhatsAppShare}
+                      >
+                        Share via WhatsApp
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className='dropdown-item'
+                        href='#'
+                        onClick={handleCopyLink}
+                      >
+                        Copy Link
+                      </a>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -120,14 +242,15 @@ const Navbar = () => {
 
       <section id='part2' style={{ padding: '0px 3% 0px 0%', borderRadius: '7%', width: '100%' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0.2%' }}>
-          <div style={{ marginRight: '2%' }}>
+          <div style={{ marginRight: '15%', marginLeft: '0%' }}>
             <img src='https://www.malwarebytes.com/blog/images/uploads/2020/06/zero-day-image.jpg' alt='Image' style={{ width: '500px', height: '400px', borderRadius: '10%', objectFit: 'cover' }} />
           </div>
-          <div style={{ maxWidth: '550px' }}>
+          <div style={{ maxWidth: '550px', paddingRight: '10%', marginLeft: 'auto' }}>
             <p className='para' style={{ textAlign: 'justify' }}>The term <a href='https://en.wikipedia.org/wiki/Zero-day_(computing)' style={{ color: '#007BFF', textDecoration: 'none' }}> "zero-day"</a> implies that both the vulnerability and the attack are discovered or disclosed on the same day, leaving no time for the software vendor to develop and release a patch to address the issue. This makes zero-day attacks particularly dangerous because they can be launched against systems that are unaware of the vulnerability, providing little or no time for defense measures. A zero-day attack refers to a cybersecurity vulnerability or exploit that is unknown to the software vendor or the public. It takes advantage of a security weakness that the software developer is unaware of, leaving users exposed to potential attacks.</p>
           </div>
         </div>
       </section>
+
 
       <section id='part3'>
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
@@ -253,9 +376,9 @@ const Navbar = () => {
                 <h5>How can I get my own Network Logs?</h5>
                 {activeQuestion === 5 && (
                   <p className="Answers">
-                    To get your own logs please follow these{' '}
+                    To get your own logs please login and click{' '}
                     <a className="logs" href="/instructions">
-                      STEPS
+                      here
                     </a>
                     .
                   </p>
@@ -265,7 +388,7 @@ const Navbar = () => {
           </div>
         </section>
 
-        <section ref={feedbackRef} className="hexagon">
+        {/* <section ref={feedbackRef} className="hexagon">
           <div className="hexagon-content ">
             <h2>Feedback</h2>
             <p>
@@ -282,23 +405,69 @@ const Navbar = () => {
               <button type="submit" className="btn btn-primary">Submit</button>
             </form>
           </div>
-        </section>
+        </section> */}
       </div>
 
-      <section id='final'>
-        <a className="btn" target='_blank' href="mailto:kapardhikannekanti@gmail.com">CONTACT ME</a>
-      </section>
 
-      <div className="bottom-container">
-        <div className="Link">
-          <a className="footer-link" target='_blank' href="https://www.linkedin.com/in/kapardhi-kannekanti-a91a4325b">@LinkedIn</a>
-          <span className="link-space"></span>
-          <a className="footer-link" target='_blank' href="https://twitter.com/kapardhi200903">@Twitter</a>
-          <span className="link-space"></span>
-          <a className="footer-link" target='_blank' href="https://www.instagram.com/kapardhi.kannekanti/">@Instagram</a>
-        </div>
-        <p className="cpyryt">©kapardhikannekanti.</p>
+
+
+
+
+
+
+      <div className="Footer">
+        <footer className="bg-light text-dark">
+          <div className="BottomContainer" style={{ paddingLeft: '10%' }}>
+            <div className="row">
+              <div className="col-md-4">
+                <h3 >About Us</h3>
+                <p>
+                  We are Team Hackers <br /> A team from KMIT Project School
+                  <br /> <a style={{ color: "blue" }} href='/AboutUs'><h7>more..</h7></a>
+                </p>
+
+              </div>
+              <div className="col-md-4">
+                <h3>Contact</h3>
+                <p>
+                  <FontAwesomeIcon icon={faEnvelope} /> <a href='mailto:detectivezeroday@gmail.com'> detectivezeroday@gmail.com </a>
+                </p>
+                <p>
+                  <FontAwesomeIcon icon={faPhone} /> 9848022338
+                </p>
+              </div>
+              <div className="col-md-4">
+                <h3>Follow Us</h3>
+                <div className="d-flex align-items-center">
+                  <a
+                    href="https://www.instagram.com/useful.idiotss/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      className="fa-instagram-dark"
+                      style={{ color: '#444444' }}
+                    />
+                    _detectivezeroday
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-light text-dark text-center py-3">
+            <p>
+              <FontAwesomeIcon icon={faCircle} style={{ color: '#888888', marginRight: '5px' }} />
+              &copy; 2023-DetectivedZeroDay. All rights reserved.
+            </p>
+          </div>
+        </footer>
       </div>
+
+
+
+
+
     </div>
   );
 }

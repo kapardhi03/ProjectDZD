@@ -28,6 +28,7 @@
     /* text-align: center; */
 }
 .uploadButton {
+  width: auto;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -45,6 +46,8 @@
 
 .uploadButton:hover {
     background-color: #3b3939;
+
+
 }
 .infoSection {
     display: flex;
@@ -122,6 +125,7 @@ color: #606c6b;
 border-bottom: 5px;
 width: 4%;
 margin: 5% auto;
+padding-top: 2%;
 }
 
 .cpyryt{
@@ -140,7 +144,12 @@ margin: 5% auto;
     
 
 }
+.BottomContainer{
+  padding-top: 10%;
+
+}
 .btn {
+  width: auto;
     background: #222323;
     background-image: -webkit-linear-gradient(to#f9efef, #bec3c6);
     background-image: -moz-linear-gradient(top, #f9efef, #bec3c6ea);
@@ -179,22 +188,21 @@ margin: 5% auto;
     padding-bottom: 4%;
 }
 
-.bottom-container{
-    /* background-color: #a4abab; */
-    position: absolute;
-    left:0;
-    right: 0;
-    padding-top: 50px;
-    
-    
-}
+
 .footer-link {
     color: #807979;
     margin: 0 0.2rem;
     padding: 0;
   }
+  .Footer{
+    border-top: #b7b4b4;
+    height: 0%;
+    width:auto;
+    padding-top:6%;
+    color: #b7b4b4;
+  }
   
-  .bottom-container {
+  /* .bottom-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -211,7 +219,7 @@ margin: 5% auto;
   .link-space {
     margin: 0 0.5rem;
   }
-  
+   */
   .cpyryt {
     text-align: center;
     color: #787b7b;
@@ -374,4 +382,12 @@ h5{
   
   padding-bottom: 0px;
   cursor: default;
+}
+a {
+  color: #252423; /* Change to the desired color */
+  text-decoration: none; /* Optional: Remove underline if not needed */
+}
+
+a:hover {
+  color: #5b5b50; /* Change to the desired color for hover state */
 }

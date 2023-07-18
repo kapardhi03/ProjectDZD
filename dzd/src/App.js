@@ -1,25 +1,111 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './pages/Home';
-import Upload from './pages/Upload';
-import FrontPage from './FrontPage';
-import instructions from './pages/instructions';
-import deskApp from './pages/deskApp';
+// App.js or your routing component
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import Home from "./pages/Home";
+import Upload from "./pages/Upload";
+import AboutUs from "./pages/AboutUs";
+// import Instructions from "../public/instructions";
+import Instructions from "./pages/instructions";
 
-function App() {
+const App = () => {
+  const [isLoggedIn, setLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
+
+  const handleLogin = () => {
+    setLoggedIn(true);
+  };
+
+  const handleRegister = () => {
+    setLoggedIn(true);
+  };
+  if (isLoggedIn){
+    return (
+      <Router>
+        <Switch>
   
+        <Route path="/register" component={Register} />
+        <Route path="/login" component = {Login}/>
+        <Route exact path="/" component={Home}/>
+        <Route path="/AboutUs" component={AboutUs}/>
+        <Route path="/Upload" component={Upload}/>
+        <Route path="/instructions" component={Instructions}/>
+          <Route exact path="/">
+            {isLoggedIn ? (
+              <Home />
+            ) : (
+              <Redirect to="/login" />
+            )}
+          </Route>
+          <Route path="/login">
+            {isLoggedIn ? (
+              <Redirect to="/" />
+            ) : (
+              <Login onLogin={handleLogin} />
+            )}
+          </Route>
+          <Route path="/register">
+            {isLoggedIn ? (
+              <Redirect to="/" />
+            ) : (
+              <Register onRegister={handleRegister} />
+            )}
+          </Route>
+          <Route path="/Upload">
+            {isLoggedIn ? (
+              <Redirect to="/Upload" />
+            ) : (
+              <Redirect to="/login" />
+            )}
+          </Route>
+        </Switch>
+      </Router>
+    );
+  }
+  else{
 
+  
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />    
-        <Route path="/Upload" component={Upload} />
-        <Route path =  '/FrontPage' component = {FrontPage}/>
-        <Route path = '/instructions' component = {instructions}/>
-        <Route exact path="/knowmore" component={deskApp} /> 
+
+      <Route path="/register" component={Register} />
+      <Route path="/login" component = {Login}/>
+      <Route exact path="/" component={Home}/>
+      <Route path="/AboutUs" component={AboutUs}/>
+      {/* <Route path="/Upload" component={Upload}/> */}
+        <Route exact path="/">
+          {isLoggedIn ? (
+            <Home />
+          ) : (
+            <Redirect to="/login" />
+          )}
+        </Route>
+        <Route path="/login">
+          {isLoggedIn ? (
+            <Redirect to="/" />
+          ) : (
+            <Login onLogin={handleLogin} />
+          )}
+        </Route>
+        <Route path="/register">
+          {isLoggedIn ? (
+            <Redirect to="/" />
+          ) : (
+            <Register onRegister={handleRegister} />
+          )}
+        </Route>
+        <Route path="/Upload">
+          {isLoggedIn ? (
+            <Redirect to="/Upload" />
+          ) : (
+            <Redirect to="/login" />
+          )}
+        </Route>
       </Switch>
     </Router>
   );
-}
+          }
+};
 
 export default App;

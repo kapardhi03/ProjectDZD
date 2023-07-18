@@ -33,6 +33,8 @@ const Upload = () => {
 
     const formData = new FormData();
     formData.append('file', selectedFile);
+    formData.append('username', localStorage.getItem("username"));
+    console.log(localStorage.getItem("username"));
 
     try {
       setIsLoading(true);

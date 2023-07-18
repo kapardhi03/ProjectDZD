@@ -1,0 +1,68 @@
+/* CSS for Register component */
+
+.registerbody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.register-container {
+  max-width: 400px;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h2 {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #070707;
+  font-size: 25px;
+
+}
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-container label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.register-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+p {
+  margin-top: 20px;
+}
+.register-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-container button:hover {
+  background-color: #0056b3;
+}
