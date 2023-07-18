@@ -42,7 +42,6 @@
   flex-direction: column;
   align-items: center;
   padding-left: 3.5%;
-  /* padding-bottom: 20%; */
   
 }
 
@@ -206,21 +205,21 @@
 }
 
 .knowmore {
-  /* padding: 5px 10px; */
+ 
   font-size: 14px;
   font-weight: bold;
   color: #fff;
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  
   cursor:text;
   transition: background-color;
   font-style: oblique;
   color: #3f3c3c;
   margin-left: 7%;
   margin-right: 7%;
-  /* margin-top: auto; */
+  
   margin-bottom: 15%;
   padding-left: 20;
 }
@@ -234,7 +233,7 @@
 }
 
 .knowmore:active {
-  /* padding-right: ; */
+ 
   background-color: #ffffff;
   box-shadow: none;
 }
@@ -243,7 +242,7 @@
 
 .blink {
   animation: blink 0.5s infinite;
-  /* color: #4caf50; */
+  
 }
 
 @keyframes blink {

@@ -21,7 +21,7 @@ const Register = () => {
     event.preventDefault();
 
     // Send registration request to the backend
-    fetch("https://hackers-nn94.onrender.com/register", {
+    fetch("\https://hackers-nn94.onrender.com/register", {
       method: "POST",
       body: JSON.stringify({ username: username, password: password }),
       headers: {

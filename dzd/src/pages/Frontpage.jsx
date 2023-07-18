@@ -4,13 +4,11 @@ import 'bootstrap/dist/css/bootstrap.css'; // Import Bootstrap CSS
 import 'bootstrap/dist/js/bootstrap.bundle'; // Import Bootstrap JavaScript
 import "./Nav.css";
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faCircle } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome\/react-fontawesome';
+import { faEnvelope, faPhone, faCircle } from '@fortawesome\/free-solid-svg-icons';
+import { faInstagram } from '@fortawesome\/free-brands-svg-icons';
 import './AboutUs';
-import Instructions from './instructions';
-import Upload from './Upload';
-import Uploadpage from './Uploadpage';
+
 
 const Navbar = () => {
   const [username, setUsername] = useState("");
@@ -40,7 +38,7 @@ const Navbar = () => {
   const handleWhatsAppShare = () => {
     const url = window.location.href;
     const encodedUrl = encodeURIComponent(url);
-    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedUrl}`;
+    const whatsappUrl = `\https://api.whatsapp.com/send?text=${encodedUrl}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -221,16 +219,16 @@ const Navbar = () => {
 
       <section id='part1'>
         <h1 className='Title'>Welcome to DetectiveZeroday</h1>
-        <img className='FirstIMG' src='https://i.pinimg.com/564x/f1/f5/98/f1f59847fedb175f01f45dd7f3c16ccc.jpg' alt='Image' />
+        <img className='FirstIMG' src='\https://i.pinimg.com/564x/f1/f5/98/f1f59847fedb175f01f45dd7f3c16ccc.jpg' alt='Image' />
       </section>
 
       <section id='part2' style={{ padding: '0px 3% 0px 0%', borderRadius: '7%', width: '100%' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0.2%' }}>
           <div style={{ marginRight: '15%', marginLeft: '0%' }}>
-            <img src='https://www.malwarebytes.com/blog/images/uploads/2020/06/zero-day-image.jpg' alt='Image' style={{ width: '500px', height: '400px', borderRadius: '10%', objectFit: 'cover' }} />
+            <img src='\https://www.malwarebytes.com/blog/images/uploads/2020/06/zero-day-image.jpg' alt='Image' style={{ width: '500px', height: '400px', borderRadius: '10%', objectFit: 'cover' }} />
           </div>
           <div style={{ maxWidth: '550px', paddingRight: '10%', marginLeft: 'auto' }}>
-            <p className='para' style={{ textAlign: 'justify' }}>The term <a href='https://en.wikipedia.org/wiki/Zero-day_(computing)' style={{ color: '#007BFF', textDecoration: 'none' }}> "zero-day"</a> implies that both the vulnerability and the attack are discovered or disclosed on the same day, leaving no time for the software vendor to develop and release a patch to address the issue. This makes zero-day attacks particularly dangerous because they can be launched against systems that are unaware of the vulnerability, providing little or no time for defense measures. A zero-day attack refers to a cybersecurity vulnerability or exploit that is unknown to the software vendor or the public. It takes advantage of a security weakness that the software developer is unaware of, leaving users exposed to potential attacks.</p>
+            <p className='para' style={{ textAlign: 'justify' }}>The term <a href='\https://en.wikipedia.org/wiki/Zero-day_(computing)' style={{ color: '#007BFF', textDecoration: 'none' }}> "zero-day"</a> implies that both the vulnerability and the attack are discovered or disclosed on the same day, leaving no time for the software vendor to develop and release a patch to address the issue. This makes zero-day attacks particularly dangerous because they can be launched against systems that are unaware of the vulnerability, providing little or no time for defense measures. A zero-day attack refers to a cybersecurity vulnerability or exploit that is unknown to the software vendor or the public. It takes advantage of a security weakness that the software developer is unaware of, leaving users exposed to potential attacks.</p>
           </div>
         </div>
       </section>
@@ -240,13 +238,13 @@ const Navbar = () => {
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="https://www.indusface.com/wp-content/uploads/2019/08/3-Ways-to-Prevent-Application-Zero-Day-Attacks.png" class="d-block w-100" alt="images" />
+              <img src="\https://www.indusface.com/wp-content/uploads/2019/08/3-Ways-to-Prevent-Application-Zero-Day-Attacks.png" class="d-block w-100" alt="images" />
             </div>
             <div class="carousel-item">
-              <img src="https://www.indusface.com/wp-content/uploads/2019/08/1-3.png" class="d-block w-100" alt="images" />
+              <img src="\https://www.indusface.com/wp-content/uploads/2019/08/1-3.png" class="d-block w-100" alt="images" />
             </div>
             <div class="carousel-item">
-              <img src="https://static.hindawi.com/articles/scn/volume-2021/6610675/figures/6610675.fig.003.jpg" class="d-block w-100" alt="images" />
+              <img src="\https://static.hindawi.com/articles/scn/volume-2021/6610675/figures/6610675.fig.003.jpg" class="d-block w-100" alt="images" />
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -393,7 +391,7 @@ const Navbar = () => {
         <footer className="bg-light text-dark" style={{marginTop:'0%'}}>
           <div className="BottomContainer" style={{ paddingLeft: '10%' }}>
             <div className="row">
-              <div className="col-md-4" style={{paddingLeft:'10%' , paddingTop:'2%'}}>
+              <div className="col-md-4" style={{paddingLeft:'0%' , paddingTop:'2%'}}>
                 <h3 >About Us</h3>
                 <p>
                   We are Team Hackers <br /> A team from KMIT Project School
@@ -401,7 +399,7 @@ const Navbar = () => {
                 </p>
 
               </div>
-              <div className="col-md-4" style={{paddingLeft:'25%' , paddingBottom:'2%'} }>
+              <div className="col-md-4" style={{paddingLeft:'7%' } }>
                 <h3>Contact</h3>
                 <p>
                   <FontAwesomeIcon icon={faEnvelope} /> <a href='mailto:detectivezeroday@gmail.com'> detectivezeroday@gmail.com </a>
@@ -410,7 +408,7 @@ const Navbar = () => {
                   <FontAwesomeIcon icon={faPhone} /> 9848022338
                 </p>
               </div>
-              {/* <div className="col-md-4">
+              <div className="col-md-4" style={{paddingLeft:'7%'}}>
                 <h3>Follow Us</h3>
                 <div className="d-flex align-items-center">
                   <a
@@ -426,7 +424,7 @@ const Navbar = () => {
                     _detectivezeroday
                   </a>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
           <div className="bg-light text-dark text-center py-3">

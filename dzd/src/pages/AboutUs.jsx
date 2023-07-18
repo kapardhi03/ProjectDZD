@@ -1,6 +1,5 @@
 import React from 'react';
 import './AboutUs.css';
-import Navbar from './Navbar';
 import { Link } from 'react-router-dom'; // Import the Link component
 
 const AboutUs = () => {

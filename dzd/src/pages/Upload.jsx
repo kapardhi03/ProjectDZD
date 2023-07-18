@@ -50,7 +50,7 @@ const Upload = () => {
     try {
       setIsLoading(true);
 
-      const response = await axios.post('https://hackers-nn94.onrender.com/upload', formData, {
+      const response = await axios.post('\https://hackers-nn94.onrender.com/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -147,7 +147,7 @@ const Upload = () => {
             </p>
             {showKnowMore ? (
               <div className="knowmore">
-                {/* {currentAttribute === "attack" && <p className="slide-from-left attack">Attack: {res.attack}</p>} */}
+               
                 {res.attack === 'zeroday' && <Zeroday />}
                 {res.attack === 'bot' && <Bot />}
                 {res.attack === 'ddos' && <Ddos />}

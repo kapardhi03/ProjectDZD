@@ -1,19 +1,19 @@
 
 .navbar {
-    padding: 0.10px; /* Reduce the padding */
+    padding: 0.10px; 
   }
   
   .navbar-brand {
-    font-size: 2rem; /* Reduce the font size */
+    font-size: 2rem; 
   }
   
   .navbar-nav .nav-link {
-    padding: 0.25rem 0.5rem; /* Reduce the padding */
-    font-size: 0.9rem; /* Reduce the font size */
+    padding: 0.25rem 0.5rem; 
+    font-size: 0.9rem; 
   }
   
   .dropdown-menu {
-    font-size: 0.9rem; /* Reduce the font size */
+    font-size: 0.9rem; 
   }
   .navbar-hidden {
     transform: translateY(-100%);

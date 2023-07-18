@@ -1,4 +1,4 @@
-// App.js or your routing component
+
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./pages/login";
@@ -6,7 +6,7 @@ import Register from "./pages/register";
 import Home from "./pages/Home";
 import Upload from "./pages/Upload";
 import AboutUs from "./pages/AboutUs";
-// import Instructions from "../public/instructions";
+
 import Instructions from "./pages/instructions";
 
 const App = () => {
@@ -73,7 +73,7 @@ const App = () => {
       <Route path="/login" component = {Login}/>
       <Route exact path="/" component={Home}/>
       <Route path="/AboutUs" component={AboutUs}/>
-      {/* <Route path="/Upload" component={Upload}/> */}
+     
         <Route exact path="/">
           {isLoggedIn ? (
             <Home />

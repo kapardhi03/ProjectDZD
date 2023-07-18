@@ -33,7 +33,7 @@ const Login = ({ onLogin }) => {
       password: password,
     };
 
-    fetch("https://hackers-nn94.onrender.com/login", {
+    fetch("\https://hackers-nn94.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
