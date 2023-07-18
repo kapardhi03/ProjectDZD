@@ -50,7 +50,7 @@ const Upload = () => {
     try {
       setIsLoading(true);
 
-      const response = await axios.post('http://localhost:8000/upload', formData, {
+      const response = await axios.post('https://hackers-nn94.onrender.com/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
