@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'; // Import the Link component
 const AboutUs = () => {
   return (
     <div>
-      {/* <Navbar /> */}
+      
       <div className="about-container">
-        {/* Add the Home button */}
+        
         <Link to="/" className="home-button">
           Home
         </Link>

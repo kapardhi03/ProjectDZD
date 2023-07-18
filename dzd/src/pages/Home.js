@@ -8,13 +8,13 @@ const Home = () => {
   const history = useHistory();
 
   const handleTryNow = () => {
-    // Check if user is authenticated (example condition)
+    
     const isAuthenticated = localStorage.getItem("isLoggedIn") === "true";
 
     if (isAuthenticated) {
-      history.push('/Upload'); // Redirect to Upload page
+      history.push('/Upload'); 
     } else {
-      history.push('/login'); // Redirect to Login page
+      history.push('/login'); 
     }
   };
 

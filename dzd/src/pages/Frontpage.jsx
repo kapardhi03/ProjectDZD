@@ -11,8 +11,7 @@ import './AboutUs';
 import Instructions from './instructions';
 import Upload from './Upload';
 import Uploadpage from './Uploadpage';
-// import register from './register';
-// import instructions from './instructions';
+
 const Navbar = () => {
   const [username, setUsername] = useState("");
   const history = useHistory();
@@ -21,9 +20,7 @@ const Navbar = () => {
   const [navbarVisible, setNavbarVisible] = useState(true);
   const [activeQuestion, setActiveQuestion] = useState(null);
 
-  // ... (existing code)
-
-  // const [activeQuestion, setActiveQuestion] = useState(null);
+  
 
   const handleQuestionClick = (index) => {
     setActiveQuestion(index === activeQuestion ? null : index);
@@ -31,9 +28,9 @@ const Navbar = () => {
   const [feedback, setFeedback] = useState('');
   const handleSubmitFeedback = (e) => {
     e.preventDefault();
-    // Perform the necessary actions with the submitted feedback
+
     console.log('Submitted feedback:', feedback);
-    // Reset the feedback state
+    
     setFeedback('');
   };
 
@@ -187,19 +184,6 @@ const Navbar = () => {
                     <li>
                       <hr className='dropdown-divider' />
                     </li>
-                    {/* <li>
-                      <a
-                        className='dropdown-item small-link'
-                        href='#feedback'
-                        onClick={handleFeedbackClick}
-                      >
-                        Feedback
-                      </a>
-                    </li> */}
-
-
-
-
                     <li>
                       <a
                         className='dropdown-item small-link'
@@ -277,7 +261,7 @@ const Navbar = () => {
       </section>
 
 
-      {/* FAQ */}
+      
       <div className="container-small">
         <section ref={faqRef} className="hexagon cursor-default">
           <div className="hexagon-content">
@@ -396,25 +380,6 @@ const Navbar = () => {
             </ul>
           </div>
         </section>
-
-        {/* <section ref={feedbackRef} className="hexagon">
-          <div className="hexagon-content ">
-            <h2>Feedback</h2>
-            <p>
-              Please provide your valuable feedback here
-            </p>
-            <form onSubmit={handleSubmitFeedback}>
-              <textarea
-                className="form-control feedback-textarea"
-                placeholder="Enter your feedback"
-                value={feedback}
-                onChange={(e) => setFeedback(e.target.value)}
-                required
-              ></textarea>
-              <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
-          </div>
-        </section> */}
       </div>
 
 
