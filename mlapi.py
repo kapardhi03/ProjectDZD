@@ -86,8 +86,8 @@ webattack_bruteforce_model = pickle.load(
 webattack_sqlinjection_model = pickle.load(
     open('./Models/webattack_sqlinjection_model.pkl', 'rb'))
 
-known_attack_models = {botmodel: "Bot", ddos_model: "DDoS", ddoshulk_model: "DoS hulk", dos_goldeneye_model: "DoS goldeneye", dos_slowhttptest_model: "DoS slowhttptest", dos_slowloris_model: "DoS_slowloris",
-                       ftppatator_model: "FTP Patator", infiltration_model: "Infiltration", ssh_patator_model: "SSH Patator", webattack_bruteforce_model: "Webattack Bruteforce", webattack_sqlinjection_model: "Webattack SQL Injection"}
+known_attack_models = {botmodel: "bot", ddos_model: "ddos", ddoshulk_model: "ddoshulk", dos_goldeneye_model: "ddosgoldeneye", dos_slowhttptest_model: "dosslowhttptest", dos_slowloris_model: "dosslowloris",
+                       ftppatator_model: "ftppatator", infiltration_model: "infiltration", ssh_patator_model: "sshpatator", webattack_bruteforce_model: "webattackbruteforce", webattack_sqlinjection_model: "webattacksqlinjection"}
 print(len(known_attack_models))
 
 

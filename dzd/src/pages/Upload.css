@@ -42,7 +42,7 @@
   flex-direction: column;
   align-items: center;
   padding-left: 3.5%;
-  padding-bottom: 20%;
+  /* padding-bottom: 20%; */
   
 }
 
@@ -173,7 +173,7 @@
 .Check {
   text-align: center;
   margin-top: 50px;
-  margin-right: 50px;
+  /* margin-right: 50px; */
 }
 
 .check-result-btn {
@@ -202,9 +202,9 @@
   box-shadow: none;
 }
 
-.res {
-  margin-top: 20px;
-}
+/* .res { */
+  /* margin-top: 20px; */
+/* } */
 
 .malors {
   font-size: 20px;
@@ -221,11 +221,11 @@
   border: none;
   border-radius: 5px;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
-  cursor:not-allowed;
-  transition: background-color 0.3s ease;
+  cursor:text;
+  transition: background-color;
   font-style: oblique;
   color: #3f3c3c;
-  margin-left: 2px;
+  margin-left: 7%;
   margin-right: 7%;
   /* margin-top: auto; */
   margin-bottom: 15%;
@@ -242,14 +242,14 @@
 
 .knowmore:active {
   /* padding-right: ; */
-  background-color: #d3cece;
+  background-color: #ffffff;
   box-shadow: none;
 }
 
-.knowmore p {
+/* .knowmore p {
   margin-bottom: 10px;
   color: #5e5a5a;
-}
+} */
 
 .blink {
   animation: blink 0.5s infinite;

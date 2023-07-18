@@ -338,13 +338,13 @@ const Navbar = () => {
                 {activeQuestion === 3 && (
                   <p className="Answers">
                     Organizations can take several measures to protect themselves against Zero-day attacks:
-                    <ul>
-                      <li>Regularly update software and apply security patches.</li>
-                      <li>Implement robust network security measures, such as firewalls and intrusion detection systems.</li>
-                      <li>Use behavior-based detection mechanisms to identify abnormal activities.</li>
-                      <li>Implement multi-factor authentication to enhance access control.</li>
-                      <li>Train employees on cybersecurity best practices and promote a security-conscious culture.</li>
-                      <li>Partner with cybersecurity experts to conduct regular security assessments and audits.</li>
+                    <ul className='Points'>
+                      <li style={{cursor:"default"}}>Regularly update software and apply security patches.</li>
+                      <li style={{cursor:"default"}}>Implement robust network security measures, such as firewalls and intrusion detection systems.</li>
+                      <li style={{cursor:"default"}}>Use behavior-based detection mechanisms to identify abnormal activities.</li>
+                      <li style={{cursor:"default"}}>Implement multi-factor authentication to enhance access control.</li>
+                      <li style={{cursor:"default"}}>Train employees on cybersecurity best practices and promote a security-conscious culture.</li>
+                      <li style={{cursor:"default"}}>Partner with cybersecurity experts to conduct regular security assessments and audits.</li>
                     </ul>
                   </p>
                 )}
@@ -358,12 +358,12 @@ const Navbar = () => {
                 {activeQuestion === 4 && (
                   <p className="Answers">
                     Preventing Zero-day attacks entirely is challenging due to their nature. However, organizations can take proactive measures to reduce the risk:
-                    <ul>
-                      <li>Implement a robust cybersecurity framework that includes regular vulnerability assessments and patch management.</li>
-                      <li>Deploy advanced threat detection systems that utilize machine learning and behavioral analysis.</li>
-                      <li>Practice defense-in-depth by implementing multiple layers of security controls.</li>
-                      <li>Stay informed about the latest vulnerabilities and security advisories.</li>
-                      <li>Establish incident response plans to mitigate the impact of a Zero-day attack.</li>
+                    <ul className='Points'>
+                      <li style={{cursor:"default"}}>Implement a robust cybersecurity framework that includes regular vulnerability assessments and patch management.</li>
+                      <li style={{cursor:"default"}}>Deploy advanced threat detection systems that utilize machine learning and behavioral analysis.</li>
+                      <li style={{cursor:"default"}}>Practice defense-in-depth by implementing multiple layers of security controls.</li>
+                      <li style={{cursor:"default"}}>Stay informed about the latest vulnerabilities and security advisories.</li>
+                      <li style={{cursor:"default"}}>Establish incident response plans to mitigate the impact of a Zero-day attack.</li>
                     </ul>
                   </p>
                 )}
@@ -377,9 +377,18 @@ const Navbar = () => {
                 {activeQuestion === 5 && (
                   <p className="Answers">
                     To get your own logs please login and click{' '}
-                    <a className="logs" href="/instructions">
-                      here
-                    </a>
+                    {isAuthenticated ? (
+                      <a className="logs" href="/instructions">
+                        here
+                      </a>
+                                        
+                    ):(
+                      <a className="logs" href="/login">
+                        here
+                      </a>
+                    )
+                    }
+
                     .
                   </p>
                 )}
@@ -416,10 +425,10 @@ const Navbar = () => {
 
 
       <div className="Footer">
-        <footer className="bg-light text-dark">
+        <footer className="bg-light text-dark" style={{marginTop:'0%'}}>
           <div className="BottomContainer" style={{ paddingLeft: '10%' }}>
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-4" style={{paddingLeft:'10%' , paddingTop:'2%'}}>
                 <h3 >About Us</h3>
                 <p>
                   We are Team Hackers <br /> A team from KMIT Project School
@@ -427,7 +436,7 @@ const Navbar = () => {
                 </p>
 
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4" style={{paddingLeft:'25%' , paddingBottom:'2%'} }>
                 <h3>Contact</h3>
                 <p>
                   <FontAwesomeIcon icon={faEnvelope} /> <a href='mailto:detectivezeroday@gmail.com'> detectivezeroday@gmail.com </a>
@@ -436,7 +445,7 @@ const Navbar = () => {
                   <FontAwesomeIcon icon={faPhone} /> 9848022338
                 </p>
               </div>
-              <div className="col-md-4">
+              {/* <div className="col-md-4">
                 <h3>Follow Us</h3>
                 <div className="d-flex align-items-center">
                   <a
@@ -452,7 +461,7 @@ const Navbar = () => {
                     _detectivezeroday
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="bg-light text-dark text-center py-3">

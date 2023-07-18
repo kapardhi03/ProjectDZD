@@ -2,8 +2,19 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Uploadpage from './Uploadpage';
 import './Upload.css';
-import instructions from './instructions';
-
+import Ddosgoldeneye from './attackinfos/ddosgoldeneye';
+import Bot from './attackinfos/Bot';
+import Ddos from './attackinfos/Ddos';
+import Ddoshulk from './attackinfos/Ddoshulk';
+import Ddosslowhttptest from './attackinfos/Ddosslowhttptest';
+import Ddosslowloris from './attackinfos/Ddosslowloris';
+import Ftppatator from './attackinfos/Ftppatator';
+import Infiltration from './attackinfos/Infiltration';
+import Sshpatator from './attackinfos/Sshpatator';
+import Webbruteforce from './attackinfos/Webbruteforce';
+import Websqlinjection from './attackinfos/Websqlinjection';
+import Zeroday from './attackinfos/Zeroday';
+ 
 const Upload = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showResult, setShowResult] = useState(false);
@@ -107,7 +118,7 @@ const Upload = () => {
             <p className="form-paragraph"><i>File should be a .csv file</i></p>
             <label htmlFor="file-input" className="drop-container">
               <span className="drop-title">{fileName ? fileName : 'Drop files here'}</span>
-              
+
               <input type="file" accept=".csv" required id="file-input" onChange={handleFileChange} />
             </label>
           </form>
@@ -127,23 +138,34 @@ const Upload = () => {
           </button>
         )}
 
-        {showResult && (
+        
+      </div>
+      {showResult && (
           <div className="res">
-            <p className={`malors ${isBlinking ? 'blink' : ''}`} style={{ color: isMalicious ? 'red' : 'green ' }}>
+            <p className={`malors ${isBlinking ? 'blink' : ''}`} style={{ color: isMalicious ? 'red' : 'green ' , marginLeft:'40%'}}>
               Your Network is {isMalicious === true ? 'Malicious' : 'Safe'}
             </p>
             {showKnowMore ? (
               <div className="knowmore">
-                {currentAttribute === "nonmal" && <p className="slide-from-left non-malicious">Non-Malicious samples: {res.nonmal}</p>}
-                {currentAttribute === "mali" && <p className="slide-from-left malicious">Malicious samples: {res.mali}</p>}
-                {currentAttribute === "attack" && <p className="slide-from-left attack">Attack: {res.attack}</p>}
+                {/* {currentAttribute === "attack" && <p className="slide-from-left attack">Attack: {res.attack}</p>} */}
+                {res.attack === 'zeroday' && <Zeroday />}
+                {res.attack === 'bot' && <Bot />}
+                {res.attack === 'ddos' && <Ddos />}
+                {res.attack === 'ddoshulk' && <Ddoshulk />}
+                {res.attack === 'ddosgoldeneye' && <Ddosgoldeneye />}
+                {res.attack === 'dosslowhttptest' && <Ddosslowhttptest />}
+                {res.attack === 'dosslowloris' && <Ddosslowloris />}
+                {res.attack === 'ftppatator' && <Ftppatator />}
+                {res.attack === 'infiltration' && <Infiltration />}
+                {res.attack === 'sshpatator' && <Sshpatator />}
+                {res.attack === 'webattackbruteforce' && <Webbruteforce />}
+                {res.attack === 'webattacksqlinjection' && <Websqlinjection />}
               </div>
             ) : (
               <button className="knowmore" onClick={() => handleKnowMore(true)}>Know More</button>
             )}
           </div>
         )}
-      </div>
 
       <Uploadpage />
     </div>
