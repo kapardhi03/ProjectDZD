@@ -38,7 +38,7 @@ const Navbar = () => {
   const handleWhatsAppShare = () => {
     const url = window.location.href;
     const encodedUrl = encodeURIComponent(url);
-    const whatsappUrl = `\https://api.whatsapp.com/send?text=${encodedUrl}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedUrl}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -219,16 +219,16 @@ const Navbar = () => {
 
       <section id='part1'>
         <h1 className='Title'>Welcome to DetectiveZeroday</h1>
-        <img className='FirstIMG' src='\https://i.pinimg.com/564x/f1/f5/98/f1f59847fedb175f01f45dd7f3c16ccc.jpg' alt='Image' />
+        <img className='FirstIMG' src='https://i.pinimg.com/564x/f1/f5/98/f1f59847fedb175f01f45dd7f3c16ccc.jpg' alt='Image' />
       </section>
 
       <section id='part2' style={{ padding: '0px 3% 0px 0%', borderRadius: '7%', width: '100%' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0.2%' }}>
           <div style={{ marginRight: '15%', marginLeft: '0%' }}>
-            <img src='\https://www.malwarebytes.com/blog/images/uploads/2020/06/zero-day-image.jpg' alt='Image' style={{ width: '500px', height: '400px', borderRadius: '10%', objectFit: 'cover' }} />
+            <img src='https://www.malwarebytes.com/blog/images/uploads/2020/06/zero-day-image.jpg' alt='Image' style={{ width: '500px', height: '400px', borderRadius: '10%', objectFit: 'cover' }} />
           </div>
           <div style={{ maxWidth: '550px', paddingRight: '10%', marginLeft: 'auto' }}>
-            <p className='para' style={{ textAlign: 'justify' }}>The term <a href='\https://en.wikipedia.org/wiki/Zero-day_(computing)' style={{ color: '#007BFF', textDecoration: 'none' }}> "zero-day"</a> implies that both the vulnerability and the attack are discovered or disclosed on the same day, leaving no time for the software vendor to develop and release a patch to address the issue. This makes zero-day attacks particularly dangerous because they can be launched against systems that are unaware of the vulnerability, providing little or no time for defense measures. A zero-day attack refers to a cybersecurity vulnerability or exploit that is unknown to the software vendor or the public. It takes advantage of a security weakness that the software developer is unaware of, leaving users exposed to potential attacks.</p>
+            <p className='para' style={{ textAlign: 'justify' }}>The term <a href='https://en.wikipedia.org/wiki/Zero-day_(computing)' style={{ color: '#007BFF', textDecoration: 'none' }}> "zero-day"</a> implies that both the vulnerability and the attack are discovered or disclosed on the same day, leaving no time for the software vendor to develop and release a patch to address the issue. This makes zero-day attacks particularly dangerous because they can be launched against systems that are unaware of the vulnerability, providing little or no time for defense measures. A zero-day attack refers to a cybersecurity vulnerability or exploit that is unknown to the software vendor or the public. It takes advantage of a security weakness that the software developer is unaware of, leaving users exposed to potential attacks.</p>
           </div>
         </div>
       </section>
