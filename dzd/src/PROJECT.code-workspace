@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../DSA~CPP"
+		},
+		{
+			"path": "../../../C - Exam codes"
+		},
+		{
+			"path": "../../../WebDev"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "WebDev"
+	}
+}
