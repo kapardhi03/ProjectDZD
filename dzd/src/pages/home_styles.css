@@ -108,11 +108,6 @@
     height: 400px;
 
 }
-/* 
-.infoContainer {
-    flex: 1 1 auto;
-    text-align: center;
-} */
 
 .info {
     font-size: 18px; /* Adjust the font size as needed */
@@ -202,24 +197,7 @@ padding-top: 2%;
     color: #b7b4b4;
   }
   
-  /* .bottom-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
   
-  .link-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  .link-space {
-    margin: 0 0.5rem;
-  }
-   */
   .cpyryt {
     text-align: center;
     color: #787b7b;
