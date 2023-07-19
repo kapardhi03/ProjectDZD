@@ -50,7 +50,7 @@ const Upload = () => {
     try {
       setIsLoading(true);
 
-      const response = await axios.post('\https://hackers-nn94.onrender.com/upload', formData, {
+      const response = await axios.post('http://127.0.0.1:8000/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -145,9 +145,15 @@ const Upload = () => {
             <p className={`malors ${isBlinking ? 'blink' : ''}`} style={{ color: isMalicious ? 'red' : 'green ' , marginLeft:'40%'}}>
               Your Network is {isMalicious === true ? 'Malicious' : 'Safe'}
             </p>
+            {isMalicious?(
+              <button className="knowmore" onClick={()=>  handleKnowMore(true)}>Know More</button>
+            ):(
+              <div></div>
+            )}
+
             {showKnowMore ? (
               <div className="knowmore">
-               <button className="knowmore" onClick={() => handleKnowMore(true)}>Know More</button>
+               
                 {res.attack === 'zeroday' && <Zeroday />}
                 {res.attack === 'bot' && <Bot />}
                 {res.attack === 'ddos' && <Ddos />}
