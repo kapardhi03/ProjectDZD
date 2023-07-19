@@ -219,7 +219,7 @@ const Navbar = () => {
 
       <section id='part1'>
         <h1 className='Title'>Welcome to DetectiveZeroday</h1>
-        <img className='FirstIMG' src='https://img.freepik.com/free-vector/cyber-attack-concept-illustration_114360-1976.jpg?w=2000' alt='Image' />
+        <img className='FirstIMG' src='https://img.freepik.com/free-vector/cyber-attack-concept-illustration_114360-1976.jpg?w=2000 ' alt='Image' style={{height:'600px' , width:'550px' , marginLeft:'5%'}} />
       </section>
 
       <section id='part2' style={{ padding: '0px 3% 0px 0%', borderRadius: '7%', width: '100%' }}>
