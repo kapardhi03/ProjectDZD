@@ -147,7 +147,7 @@ const Upload = () => {
             </p>
             {showKnowMore ? (
               <div className="knowmore">
-               
+               <button className="knowmore" onClick={() => handleKnowMore(true)}>Know More</button>
                 {res.attack === 'zeroday' && <Zeroday />}
                 {res.attack === 'bot' && <Bot />}
                 {res.attack === 'ddos' && <Ddos />}
@@ -162,7 +162,7 @@ const Upload = () => {
                 {res.attack === 'webattacksqlinjection' && <Websqlinjection />}
               </div>
             ) : (
-              // <button className="knowmore" onClick={() => handleKnowMore(true)}>Know More</button>
+              
               <div style={{paddingBottom:"10%" , paddingLeft:'20%'}}></div>
             )}
           </div>
