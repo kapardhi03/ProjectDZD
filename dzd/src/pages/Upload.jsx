@@ -163,7 +163,7 @@ const Upload = () => {
               </div>
             ) : (
               // <button className="knowmore" onClick={() => handleKnowMore(true)}>Know More</button>
-              <div></div>
+              <div style={{paddingBottom:"10%" , paddingLeft:'20%'}}></div>
             )}
           </div>
         )}
