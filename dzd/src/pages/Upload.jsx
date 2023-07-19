@@ -14,7 +14,7 @@ import Sshpatator from './attackinfos/Sshpatator';
 import Webbruteforce from './attackinfos/Webbruteforce';
 import Websqlinjection from './attackinfos/Websqlinjection';
 import Zeroday from './attackinfos/Zeroday';
- 
+
 const Upload = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showResult, setShowResult] = useState(false);
@@ -138,34 +138,36 @@ const Upload = () => {
           </button>
         )}
 
-        
+
       </div>
       {showResult && (
-          <div className="res">
-            <p className={`malors ${isBlinking ? 'blink' : ''}`} style={{ color: isMalicious ? 'red' : 'green ' , marginLeft:'40%'}}>
-              Your Network is {isMalicious === true ? 'Malicious' : 'Safe'}
-            </p>
-            {showKnowMore ? (
-              <div className="knowmore">
-               
-                {res.attack === 'zeroday' && <Zeroday />}
-                {res.attack === 'bot' && <Bot />}
-                {res.attack === 'ddos' && <Ddos />}
-                {res.attack === 'ddoshulk' && <Ddoshulk />}
-                {res.attack === 'ddosgoldeneye' && <Ddosgoldeneye />}
-                {res.attack === 'dosslowhttptest' && <Ddosslowhttptest />}
-                {res.attack === 'dosslowloris' && <Ddosslowloris />}
-                {res.attack === 'ftppatator' && <Ftppatator />}
-                {res.attack === 'infiltration' && <Infiltration />}
-                {res.attack === 'sshpatator' && <Sshpatator />}
-                {res.attack === 'webattackbruteforce' && <Webbruteforce />}
-                {res.attack === 'webattacksqlinjection' && <Websqlinjection />}
-              </div>
-            ) : (
-              <button className="knowmore" onClick={() => handleKnowMore(true)}>Know More</button>
-            )}
-          </div>
-        )}
+        <div className="res">
+          <p className={`malors ${isBlinking ? 'blink' : ''}`} style={{ color: isMalicious ? 'red' : 'green ', marginLeft: '40%' }}>
+            Your Network is {isMalicious === true ? 'Malicious' : 'Safe'}
+          </p>
+          {showKnowMore ? (
+            <div className="knowmore">
+
+              {res.attack === 'zeroday' && <Zeroday />}
+              {res.attack === 'bot' && <Bot />}
+              {res.attack === 'ddos' && <Ddos />}
+              {res.attack === 'ddoshulk' && <Ddoshulk />}
+              {res.attack === 'ddosgoldeneye' && <Ddosgoldeneye />}
+              {res.attack === 'dosslowhttptest' && <Ddosslowhttptest />}
+              {res.attack === 'dosslowloris' && <Ddosslowloris />}
+              {res.attack === 'ftppatator' && <Ftppatator />}
+              {res.attack === 'infiltration' && <Infiltration />}
+              {res.attack === 'sshpatator' && <Sshpatator />}
+              {res.attack === 'webattackbruteforce' && <Webbruteforce />}
+              {res.attack === 'webattacksqlinjection' && <Websqlinjection />}
+            </div>
+          ) : (
+            <button className="knowmore" onClick={() => handleKnowMore(true)}>
+              Know More
+            </button>
+          )}
+        </div>
+      )}
 
       <Uploadpage />
     </div>
