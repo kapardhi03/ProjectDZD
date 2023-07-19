@@ -110,7 +110,7 @@ async def upload_file(file: UploadFile = File(...), username: str = Form(...)):
 
     # CICIDS2017-------------------------------------------
 
-    df.drop(df.columns[0], axis=1, inplace=True)
+    df=df.values
 
     prediction = model.predict(df)
     prediction = (prediction > 0.5).astype(int)
